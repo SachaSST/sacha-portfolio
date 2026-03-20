@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacha Sitbon | Portfolio</title>
+    <meta name="description" content="Sacha Sitbon - Portfolio">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Layers -->
+    <div class="bg-gradient-orbs">
+        <div class="bg-orb bg-orb--1"></div>
+        <div class="bg-orb bg-orb--2"></div>
+        <div class="bg-orb bg-orb--3"></div>
+    </div>
+    <div class="bg-grid"></div>
+    <div class="bg-scanlines"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">
+            <span class="logo-bracket">&lt;</span>
+            <span class="logo-text">SachaSST</span>
+            <span class="logo-bracket">/&gt;</span>
+        </div>
+        <div class="nav-links">
+            <a href="#hero" class="nav-link" data-text="Home">Home</a>
+            <a href="#about" class="nav-link" data-text="About">About</a>
+            <a href="#projects" class="nav-link" data-text="Projects">Projects</a>
+            <a href="#skills" class="nav-link" data-text="Skills">Skills</a>
+            <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
+        </div>
+        <div class="nav-hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#hero" class="mobile-link">Home</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-name">
+                <span class="name-first">Sacha</span>
+                <span class="name-last">Sitbon</span>
+            </h1>
+            <div class="hero-tagline">Portfolio</div>
+            <div class="hero-subtitle">
+                <span class="subtitle-prefix">&gt;&nbsp;</span>
+                <span class="typewriter" id="typewriter"></span>
+                <span class="cursor-blink">|</span>
+            </div>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-neon btn-primary">
+                    <span>View my projects</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn-neon btn-secondary">
+                    <span>Get in touch</span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator" id="scroll-indicator">
+            <div class="scroll-text">Scroll</div>
+            <div class="scroll-line">
+                <div class="scroll-dot"></div>
+            </div>
+        </div>
+        <!-- Decorative grid lines -->
+        <div class="hero-grid-overlay"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="section-container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="title-decoration">//</span> About
+            </h2>
+            <div class="about-content">
+                <div class="about-terminal" data-aos="fade-right" data-aos-delay="200">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="terminal-title">sacha@epita:~$</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="terminal-line"><span class="prompt">$</span> cat about.txt</p>
+                        <p class="terminal-output">
+                            First-year engineering student at <span class="highlight-cyan">EPITA</span>,
+                            passionate about software development, <span class="highlight-purple">artificial intelligence</span>
+                            and systems programming.
+                        </p>
+                        <p class="terminal-output">
+                            I love building projects that push boundaries,
+                            from crafting <span class="highlight-magenta">POSIX shells</span> to training
+                            <span class="highlight-cyan">neural networks</span>.
+                        </p>
+                        <p class="terminal-output">
+                            Always curious, always learning, always coding.
+                        </p>
+                        <p class="terminal-line"><span class="prompt">$</span> <span class="cursor-blink">|</span></p>
+                    </div>
+                </div>
+                <div class="about-stats" data-aos="fade-left" data-aos-delay="400">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-code"></i></div>
+                        <div class="stat-number" data-count="8">0</div>
+                        <div class="stat-label">Projects completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="stat-number" data-count="7">0</div>
+                        <div class="stat-label">Languages mastered</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="section-container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="title-decoration">//</span> Projects
+            </h2>
+            <div class="projects-grid">
+                <!-- 42sh -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card-inner">
+                        <div class="project-card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">42sh</h3>
+                        <p class="project-description">
+                            Bash-like shell built in C, fully POSIX compliant.
+                            Handles pipes, redirections, environment variables, and builtins.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">POSIX</span>
+                        </div>
+                        <div class="project-status status-done">
+                            <span class="status-dot"></span> Completed
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Java Web Services -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card-inner">
+                        <div class="project-card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Java Web Services</h3>
+                        <p class="project-description">
+                            REST API in Java with layered architecture.
+                            Built with Quarkus and Hibernate for implementation and data persistence.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Quarkus</span>
+                            <span class="tech-tag">Hibernate</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                        <div class="project-status status-done">
+                            <span class="status-dot"></span> Completed
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neurofile -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card-inner">
+                        <div class="project-card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Neurofile</h3>
+                        <p class="project-description">
+                            Python AI that automatically renames files using OCR.
+                            Leverages the OpenAI API to interpret text and generate meaningful filenames.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OCR</span>
+                            <span class="tech-tag">OpenAI API</span>
+                        </div>
+                        <div class="project-status status-done">
+                            <span class="status-dot"></span> Completed
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OCR Crossword Solver -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card-inner">
+                        <div class="project-card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">OCR Crossword Solver</h3>
+                        <p class="project-description">
+                            Crossword solver in C that extracts the grid from an image using OCR,
+                            then solves it with a neural network.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">OCR</span>
+                            <span class="tech-tag">Neural Network</span>
+                        </div>
+                        <div class="project-status status-done">
+                            <span class="status-dot"></span> Completed
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WiFi Motion Analysis -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card-inner">
+                        <div class="project-card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">WiFi Motion Analysis</h3>
+                        <p class="project-description">
+                            Motion analysis through WiFi signals in Python.
+                            Detects signal perturbations to analyze movement in a space.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Signal Processing</span>
+                            <span class="tech-tag">WiFi CSI</span>
+                        </div>
+                        <div class="project-status status-progress">
+                            <span class="status-dot"></span> In progress
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="section-container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="title-decoration">//</span> Skills
+            </h2>
+            <div class="skills-orbit-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="skills-orbit" id="skills-orbit">
+                    <div class="orbit-center">
+                        <span class="orbit-center-text">&lt;/&gt;</span>
+                    </div>
+                    <div class="skill-node" data-level="advanced" style="--angle: 0deg; --distance: 140px; --delay: 0s; --float-duration: 3.5s; --float-delay: 0s;">
+                        <span class="skill-node-label">C</span>
+                    </div>
+                    <div class="skill-node" data-level="advanced" style="--angle: 51deg; --distance: 150px; --delay: 0.1s; --float-duration: 4.2s; --float-delay: 0.5s;">
+                        <span class="skill-node-label">Python</span>
+                    </div>
+                    <div class="skill-node" data-level="intermediate" style="--angle: 102deg; --distance: 185px; --delay: 0.2s; --float-duration: 3.8s; --float-delay: 1.2s;">
+                        <span class="skill-node-label">C++</span>
+                    </div>
+                    <div class="skill-node" data-level="intermediate" style="--angle: 153deg; --distance: 170px; --delay: 0.3s; --float-duration: 4.5s; --float-delay: 0.8s;">
+                        <span class="skill-node-label">Java</span>
+                    </div>
+                    <div class="skill-node" data-level="intermediate" style="--angle: 204deg; --distance: 190px; --delay: 0.4s; --float-duration: 3.2s; --float-delay: 1.5s;">
+                        <span class="skill-node-label">C#</span>
+                    </div>
+                    <div class="skill-node" data-level="familiar" style="--angle: 255deg; --distance: 200px; --delay: 0.5s; --float-duration: 4.8s; --float-delay: 0.3s;">
+                        <span class="skill-node-label">PostgreSQL</span>
+                    </div>
+                    <div class="skill-node" data-level="familiar" style="--angle: 306deg; --distance: 195px; --delay: 0.6s; --float-duration: 3.6s; --float-delay: 1.8s;">
+                        <span class="skill-node-label">JWS</span>
+                    </div>
+                </div>
+                <div class="skills-legend">
+                    <div class="legend-item"><span class="legend-dot legend-advanced"></span> Advanced</div>
+                    <div class="legend-item"><span class="legend-dot legend-intermediate"></span> Intermediate</div>
+                    <div class="legend-item"><span class="legend-dot legend-familiar"></span> Familiar</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="section-container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="title-decoration">//</span> Contact
+            </h2>
+            <p class="contact-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Have a project in mind? Want to collaborate? Feel free to reach out.
+            </p>
+            <div class="contact-cards" data-aos="fade-up" data-aos-delay="200">
+                <a href="mailto:sacha.sitbon@epita.fr" class="contact-card">
+                    <div class="contact-icon-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-icon-glow"></div>
+                    </div>
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">sacha.sitbon@epita.fr</span>
+                </a>
+                <a href="https://github.com/" target="_blank" class="contact-card">
+                    <div class="contact-icon-wrapper">
+                        <i class="fab fa-github"></i>
+                        <div class="contact-icon-glow"></div>
+                    </div>
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">github.com/sachasitbon</span>
+                </a>
+                <a href="https://linkedin.com/" target="_blank" class="contact-card">
+                    <div class="contact-icon-wrapper">
+                        <i class="fab fa-linkedin"></i>
+                        <div class="contact-icon-glow"></div>
+                    </div>
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-value">linkedin.com/in/sachasitbon</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-line"></div>
+            <p>&copy; 2026 Sacha Sitbon. Built with passion.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
